@@ -1,3 +1,5 @@
+import re
+
 api_data = open('elblogs.txt')
 
 partner_info = {'partner': '/callback/nyr8nx', 'campaign_id': 'cid=X9KN0'}
@@ -18,7 +20,7 @@ def count_api_requests():
     api_data = open('elblogs.txt')
     for line in api_data:
         if 'api/' in line:
-            api_request = (line.partition('api/')[1] + line.partition('api/')[2]).split(' ')[0]
+            api_request = re.search('api/\S*', line).group(0).strip()
             if api_request in requests:
                 requests[api_request] += 1
             else:
