@@ -3,8 +3,8 @@ from operator import itemgetter
 
 class ApiTracker:
 
-    def __init__(self, api_data_file):
-        self.api_data = open(api_data_file)
+    def __init__(self, access_log):
+        self.api_data = open(access_log)
 
     def find_partner_callback_count(self, partner_name):
         partner = "/callback/{}".format(partner_name)
