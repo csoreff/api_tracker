@@ -1,6 +1,5 @@
 import re
 from operator import itemgetter
-import decimal
 
 class ApiTracker:
 
