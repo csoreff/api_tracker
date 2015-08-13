@@ -50,7 +50,7 @@ class ApiTracker:
         api_requests = sorted(api_requests.iteritems(), key=itemgetter(1), reverse=True)
         for k, v in api_requests:
             percentage_of_requests = float(v)/total_requests*100
-            print '{:7} {:8} {:50}'.format("%.2f" % percentage_of_requests, str(v), k)
+            print '{:7} {:8} {:50}'.format("%.2f" % percentage_of_requests + '%', str(v), k)
 
 
     @staticmethod
@@ -61,10 +61,6 @@ class ApiTracker:
 api_tracker = ApiTracker('elblogs.txt')
 api_requests = api_tracker.count_api_requests()
 total_requests = api_tracker.total_api_requests(api_requests)
-
-print api_tracker.find_partner_callback_count('nyr8nx')
-print api_tracker.find_partner_campaign_callback_count('nyr8nx', 'X9KN0')
-print '\n'
 
 api_tracker.sort_request_list(api_requests, total_requests)
 print 'Total API Requests: ' + str(total_requests)
