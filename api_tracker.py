@@ -68,5 +68,4 @@ print api_tracker.find_partner_campaign_callback_count('nyr8nx', 'X9KN0')
 print '\n'
 
 api_tracker.sort_request_list(api_requests, total_requests)
-print'\n'
 print 'Total API Requests: ' + str(total_requests)
