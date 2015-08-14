@@ -20,5 +20,5 @@ Campaign 'X9KN0' callbacks for partner 'nyr8nx': 27
 ###3) Write a python script that analyzes elblogs.txt and counts all API requests (requests starting with api/). Print them out in descending frequency.
 ===
 
-api_tracker.py, when run, will print a sorted list of the api requests in descending
+program.py, when run, will print a sorted list of the api requests in descending
 frequency, followed by the total number of api requests.
