@@ -4,12 +4,15 @@ from operator import itemgetter
 class ApiTracker:
 
     def __init__(self, access_log):
-        self.api_data = open(access_log)
+        # self.api_data = open(access_log)
+        self.api_data = []
+        with open(access_log, 'r') as f:
+            for line in f:
+                self.api_data.append(line)
 
     def find_partner_callback_count(self, partner_name):
         partner = "/callback/{}".format(partner_name)
         callback_count = 0
-        self.api_data.seek(0)
         for line in self.api_data:
             if partner in line:
                 callback_count += 1
@@ -23,7 +26,6 @@ class ApiTracker:
             'campaign_id': "cid={}".format(campaign_id)
         }
         campaign_callback_count = 0
-        self.api_data.seek(0)
         for line in self.api_data:
             if (partner_info['partner'] in line
                     and partner_info['campaign_id'] in line):
@@ -34,7 +36,6 @@ class ApiTracker:
 
     def count_api_requests(self):
         requests = {}
-        self.api_data.seek(0)
         for line in self.api_data:
             if 'api/' in line:
                 api_request = re.search('api/\S*', line).group(0).strip()
