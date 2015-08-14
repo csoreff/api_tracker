@@ -5,6 +5,8 @@
 
 The function 'find_partner_callback_count' in api_tracker.py finds the number of callbacks for any partner passed in as an argument.
 
+Could also use "grep -c 'callback/nyr8nx' elblogs.txt" in the command line.
+
 Partner 'nyr8nx' callbacks: 96
 
 ###2) How many callbacks did we receive for partner nyr8nx for campaign id (cid) X9KN0?
